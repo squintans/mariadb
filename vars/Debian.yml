@@ -1,0 +1,5 @@
+---
+packages:
+  - mariadb-server
+  - python-mysqldb
+  - python3-mysqldb

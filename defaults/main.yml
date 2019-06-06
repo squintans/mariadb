@@ -1,0 +1,7 @@
+---
+# MariaDB
+mariadb_version: '10.4'
+
+# Mysql root
+mysql_root_password: 'password'
+mysql_user: 'root'

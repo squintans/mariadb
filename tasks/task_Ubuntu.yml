@@ -1,0 +1,24 @@
+---
+- name: Apt
+  block:
+    - name: Add software-properties-common
+      apt:
+        name: software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Add MariaDB repo key
+      apt_key:
+        keyserver: keyserver.ubuntu.com
+        id: F1656F24C74CD1D8
+
+    - name: Add MariaDB repo
+      apt_repository:
+        repo: "deb [arch=amd64,arm64,ppc64el] http://tedeco.fi.upm.es/mirror/mariadb/repo/{{ mariadb_version }}/ubuntu {{ ansible_distribution_release }} main"
+        state: present
+
+    - name: Install Software
+      apt: 
+        name: "{{ packages }}"
+        update_cache: yes
+  tags: t_apt

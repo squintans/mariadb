@@ -1,0 +1,59 @@
+---
+# Import variables.
+- name: Import variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# Import tasks.
+- name: Import tasks RedHat
+  include_tasks: task_RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Import tasks Ubuntu
+  include_tasks: task_Ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+
+# MariaDB service.
+- name: MariaDB service
+  service: 
+    name: mariadb
+    state: started
+    enabled: yes
+
+# Mysql Secure
+- name: Mysql Secure
+  block:
+    - name: Set root password 
+      mysql_user: 
+        login_user: root
+        login_password: ""
+        user: root
+        password: "{{ mysql_root_password }}"
+    
+    - name: Secure the root user for localhost (::1) - localhost (127.0.0.1) - localhost - domain
+      mysql_user:
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        user: root
+        password: "{{ mysql_root_password }}"
+        host: "{{ item }}"
+      loop:
+        - "::1"
+        - "127.0.0.1"
+        - "localhost"
+        - "{{ ansible_fqdn }}"
+    
+    - name: Removes anonymous user
+      mysql_user: 
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        user: ""
+        host_all: yes
+        state: absent
+    
+    - name: Removes the test database
+      mysql_db:
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        db: test
+        state: absent
+  tags: t_mysql-secure

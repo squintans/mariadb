@@ -1,0 +1,4 @@
+---
+packages:
+  - MariaDB-server
+  - MySQL-python
