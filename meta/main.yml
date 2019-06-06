@@ -12,9 +12,9 @@ galaxy_info:
         - 7
     - name: Ubuntu
       versions:
-        - 19.04
-        - 18.10
-        - 18.04
+        - disco
+        - cosmic
+        - bionic
   galaxy_tags:
     - database
     - mariadb
