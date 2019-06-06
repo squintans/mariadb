@@ -11,7 +11,7 @@ Versions availables at: http://yum.mariadb.org/
 Requirements
 ------------
 
-A fresh Host, Vm or Container is preferable.
+This Ansible playbook is meant to be run on a FRESH never used server, virtual machine or container.
 
 Role Variables
 --------------
