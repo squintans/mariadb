@@ -77,4 +77,4 @@ GPLv2
 
 Author Information
 ------------------
-This role was created in 2019 by Serafín Quintáns - [@squintans](http://www.twitter.com/squintans/)
+This role was created in 2019 by Serafín Quintáns - [squintans](http://www.linkedin.com/squintans/)
