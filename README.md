@@ -26,6 +26,12 @@ mysql_root_password: 'password'
 mysql_user: 'root'
 ```
 
+**vars/:***
+```
+Debian.yml
+RedHat.yml
+```
+
 Role Templates
 ==============
 

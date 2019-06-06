@@ -19,7 +19,7 @@
         gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
         gpgcheck: yes
         enabled: yes
-      when: ansible_distribution == 'Red Hat Enterprise Linux'
+      when: ansible_distribution == 'RedHat'
     
     - name: Install Software
       yum: 
