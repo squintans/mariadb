@@ -6,7 +6,12 @@ This role install and secure MariaDB from official repo with mysql_root_password
 Version of MariaDB can be edit on defaults/main.yml "mysql_version".
 
 Versions availables at: http://yum.mariadb.org/
-
+- 10.0
+- 10.1
+- 10.2
+- 10.3
+- 10.4
+- ..
 
 Requirements
 ------------
