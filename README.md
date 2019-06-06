@@ -2,6 +2,7 @@ Ansible Role: MariaDB
 =====================
 
 This role install and secure MariaDB from official repo with mysql_root_password: "password".
+
 Version of MariaDB can be edit on defaults/main.yml "mysql_version".
 
 Versions availables at: http://yum.mariadb.org/
