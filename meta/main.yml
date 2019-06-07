@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: squintans
-  description: MariaDB from official repo.
+  description: MariaDB Versions from official repo.
   license: "license (GPLv2)"
   min_ansible_version: 2.6
   platforms:
