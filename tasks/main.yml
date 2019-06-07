@@ -27,14 +27,14 @@
         login_user: root
         login_password: ""
         user: root
-        password: "{{ mysql_root_password }}"
+        password: "{{ mariadb_mysql_root_password }}"
     
     - name: Secure the root user for localhost (::1) - localhost (127.0.0.1) - localhost - domain
       mysql_user:
         login_user: root
-        login_password: "{{ mysql_root_password }}"
+        login_password: "{{ mariadb_mysql_root_password }}"
         user: root
-        password: "{{ mysql_root_password }}"
+        password: "{{ mariadb_mysql_root_password }}"
         host: "{{ item }}"
       loop:
         - "::1"
@@ -45,7 +45,7 @@
     - name: Removes anonymous user
       mysql_user: 
         login_user: root
-        login_password: "{{ mysql_root_password }}"
+        login_password: "{{ mariadb_mysql_root_password }}"
         user: ""
         host_all: yes
         state: absent
@@ -53,7 +53,7 @@
     - name: Removes the test database
       mysql_db:
         login_user: root
-        login_password: "{{ mysql_root_password }}"
+        login_password: "{{ mariadb_mysql_root_password }}"
         db: test
         state: absent
   tags: t_mysql-secure

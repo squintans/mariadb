@@ -14,11 +14,11 @@
 
     - name: Add MariaDB repo
       apt_repository:
-        repo: "deb [arch=amd64,arm64,ppc64el] http://tedeco.fi.upm.es/mirror/mariadb/repo/{{ mariadb_version }}/ubuntu {{ ansible_distribution_release }} main"
+        repo: "deb [arch=amd64,arm64,ppc64el] http://tedeco.fi.upm.es/mirror/mariadb/repo/{{ mariadb_mariadb_version }}/ubuntu {{ ansible_distribution_release }} main"
         state: present
 
     - name: Install Software
       apt: 
-        name: "{{ packages }}"
+        name: "{{ mariadb_packages }}"
         update_cache: yes
   tags: t_apt

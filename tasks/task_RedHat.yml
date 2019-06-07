@@ -5,7 +5,7 @@
       yum_repository:
         name: MariaDB
         description: MariaDB YUM Repo
-        baseurl: "http://yum.mariadb.org/{{ mariadb_version }}/centos7-amd64"
+        baseurl: "http://yum.mariadb.org/{{ mariadb_mariadb_version }}/centos7-amd64"
         gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
         gpgcheck: yes
         enabled: yes
@@ -15,7 +15,7 @@
       yum_repository:
         name: MariaDB
         description: MariaDB YUM Repo
-        baseurl: "http://yum.mariadb.org/{{ mariadb_version }}/rhel7-amd64"
+        baseurl: "http://yum.mariadb.org/{{ mariadb_mariadb_version }}/rhel7-amd64"
         gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
         gpgcheck: yes
         enabled: yes
@@ -23,6 +23,6 @@
     
     - name: Install Software
       yum: 
-        name: "{{ packages }}"
+        name: "{{ mariadb_packages }}"
         update_cache: yes
   tags: t_yum
