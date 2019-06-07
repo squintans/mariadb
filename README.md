@@ -24,11 +24,11 @@ Role Variables
 **defaults/main.yml:***
 ```
 # MariaDB
-mariadb_version: '10.4'
+mariadb_mariadb_version: '10.4'
 
 # Mysql root
-mysql_root_password: 'password'
-mysql_user: 'root'
+mariadb_mysql_root_password: 'password'
+mariadb_mysql_user: 'root'
 ```
 
 **vars/:***
