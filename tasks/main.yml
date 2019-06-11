@@ -23,7 +23,7 @@
 - name: MariaDB Verify port 3306
   wait_for:
     port: 3306
-    timeout: 1    
+    timeout: 2
 
 # Mysql Secure
 - name: Mysql Secure
