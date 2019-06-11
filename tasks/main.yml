@@ -19,6 +19,12 @@
     state: started
     enabled: yes
 
+# MariaDB Verify is listening on port 3306
+- name: MariaDB Verify port 3306
+  wait_for:
+    port: 3306
+    timeout: 1    
+
 # Mysql Secure
 - name: Mysql Secure
   block:
